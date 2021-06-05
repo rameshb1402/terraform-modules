@@ -34,12 +34,12 @@ resource "aws_api_gateway_deployment" "api_deploy" {
   depends_on  = [aws_api_gateway_integration.api_gw_integration]
 }
 
-resource "aws_api_gateway_vpc_link" "api_vpc_link" {
-  name        = var.name
-  description = "API GW VPC Link "
-  target_arns = var.target_arns
-  tags = {
-    Name        = var.name
-    Environment = var.environment
-  }
-}
+#resource "aws_api_gateway_vpc_link" "api_vpc_link" {
+#  name        = var.name
+#  description = "API GW VPC Link "
+#  target_arns = var.target_arns
+#  tags = {
+#    Name        = var.name
+#    Environment = var.environment
+#  }
+#}
