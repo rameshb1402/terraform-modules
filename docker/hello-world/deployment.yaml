@@ -17,4 +17,4 @@ spec:
       - name: nginx-helloworld
         image: dockerbogo/docker-nginx-hello-world
         ports:
-        - containerPort: 8080
+        - containerPort: 80

@@ -2,4 +2,4 @@ FROM nginx:mainline-alpine
 RUN rm /etc/nginx/conf.d/*
 ADD helloworld.conf /etc/nginx/conf.d/
 ADD index.html /usr/share/nginx/html/
-EXPOSE 8080
+EXPOSE 80
