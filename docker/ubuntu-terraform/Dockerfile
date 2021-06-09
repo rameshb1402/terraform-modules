@@ -7,6 +7,7 @@ RUN apt-get install -y locales jq git wget curl ansible unzip python-is-python3 
     curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | bash && \
     curl -sL https://istio.io/downloadIstioctl | sh - && \
     echo "PATH=$PATH:$HOME/.istioctl/bin" >> $HOME/.bashrc && \
+    echo "PATH=$PATH:/root/.istioctl/bin" >> $HOME/.bashrc && \
     curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" && \
     unzip awscli-bundle.zip && \
     ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && \
