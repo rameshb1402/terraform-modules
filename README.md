@@ -6,7 +6,7 @@
 # To create AWS VPC
 ```
 module "vpc" {
-source                  = "github.com/cloudveto/terraform-modules/aws/vpc-simple?ref=master"
+source                  = "github.com/cloudveto/terraform-modules/aws/vpc-two-az"
 region                  = var.region
 account_id              = var.account_id
 vpc_cidr                = var.vpc_cidr
@@ -25,13 +25,13 @@ common_tags             = var.common_tags
 # To create AWS S3 Bucket
 ```
 module "s3_bucket" {
-source = "github.com/cloudveto/terraform-modules/aws/s3?ref=master"
+source = "github.com/cloudveto/terraform-modules/aws/s3"
 name   = var.name
 }
 ```
 # From the examples, make necessary changes to terraform.tfvars file
 ```
-account_id         = "123456789"
+account_id         = "123456789012"
 region             = "us-west-2"
 environment        = "cloudveto-dev"
 ```
