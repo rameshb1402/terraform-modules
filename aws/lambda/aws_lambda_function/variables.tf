@@ -47,5 +47,5 @@ variable "filename" {
 }
 variable "reserved_concurrent_executions" {
   description = "Amount of reserved concurrent executions for this lambda function."
-  default = ""
+  default = null
 }
