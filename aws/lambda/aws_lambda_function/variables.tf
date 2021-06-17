@@ -45,3 +45,7 @@ variable "lambda_path" {
 variable "filename" {
   description = "file name"
 }
+variable "reserved_concurrent_executions" {
+  description = "Amount of reserved concurrent executions for this lambda function."
+  default = ""
+}
