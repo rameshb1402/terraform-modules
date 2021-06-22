@@ -10,7 +10,7 @@ resource "null_resource" "push" {
 #  }
 
   provisioner "local-exec" {
-    command     = "${coalesce(var.push_script, "${path.module}/${var.script_name}.sh")} ${var.source_path} ${var.repository_url} ${var.tag} ${var.account_id} ${var.role_name} ${var.region}"
+    command     = "${coalesce(var.push_script, "${path.module}/${var.script_name}.sh")} ${var.source_path} ${var.repository_url} ${var.tag} ${var.account_id} ${var.role_name} ${var.region} ${var.ecs_cluster_name} ${var.ecs_service_name} ${var.ecs_task_definition}"
     interpreter = ["bash", "-c"]
   }
 }
