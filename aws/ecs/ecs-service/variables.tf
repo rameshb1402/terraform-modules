@@ -16,12 +16,6 @@ variable "task_definition_arn" {
 variable "desired_count" {
   description = "desired count"
 }
-variable "lb_tg_arn" {
-  description = "LB target group arn"
-}
-variable "port" {
-  description = "Container port"
-}
 variable "security_group_id" {
   description = "Security group Id"
 }
@@ -30,6 +24,7 @@ variable "subnets" {
 }
 variable "aws_alb" {
   description = "aws_alb"
+  default = null
 }
 variable "ecs_iam_role" {
   description = "ecs_iam_role"
@@ -46,4 +41,9 @@ variable "force_new_deployment" {
 variable "platform_version" {
   description = "The platform version on which to run your service. Only applicable for launch_type set to FARGATE. Defaults to LATEST"
   default     = null
+}
+variable "load_balancer" {
+  description = "load balancer configuration."
+  default     = []
+  type        = any
 }

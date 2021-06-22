@@ -5,8 +5,8 @@ resource "aws_ecs_cluster" "ecs_cluster" {
     name  = "containerInsights"
     value = "enabled"
   }
-    tags = merge(
+  tags = merge(
     var.common_tags,
-    tomap({"Classification"= "private","Name"= var.environment})
+    tomap({ "Name" = var.name, "Environment" = var.environment })
   )
 }

@@ -13,10 +13,14 @@ resource "aws_ecs_service" "ecs_service" {
   }
   deployment_maximum_percent         = "200"
   deployment_minimum_healthy_percent = "100"
-  load_balancer {
-    target_group_arn = var.lb_tg_arn
-    container_name   = var.name
-    container_port   = var.port
+
+  dynamic "load_balancer" {
+    for_each = var.load_balancer
+    content {
+      target_group_arn = lookup(load_balancer.value, "target_group_arn", [])
+      container_name   = lookup(load_balancer.value, "container_name", [])
+      container_port   = lookup(load_balancer.value, "container_port", [])
+    }
   }
   network_configuration {
     security_groups  = var.security_group_id
