@@ -13,7 +13,7 @@ region="$9"
 echo "-------------------- Started $ecs_service_name --------------------"
 image_name="$(echo "$repository_url" | cut -d/ -f2)"
 (cd "$source_path" && docker build -t "$image_name" .)
-export IAM_INSTANCE_PROFILE="$role_name"aws sts get-caller-identity
+export IAM_INSTANCE_PROFILE="$role_name"
 aws ecr get-login --no-include-email --region "$region" | bash
 docker tag "$image_name" "$repository_url":"$tag"
 docker push "$repository_url":"$tag"
