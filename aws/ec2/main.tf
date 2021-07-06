@@ -1,9 +1,10 @@
 resource "aws_instance" "ec2" {
+  count = length(var.subnet_id)
   ami                    = var.ami
   instance_type          = var.instance_type
   key_name               = var.key_name
   user_data              = data.template_file.user_data.rendered
-  subnet_id              = var.subnet_id
+  subnet_id              = element(var.subnet_id, count.index)
   vpc_security_group_ids = var.vpc_security_group_ids
   iam_instance_profile   = var.iam_instance_profile
   monitoring             = true
@@ -18,7 +19,7 @@ resource "aws_instance" "ec2" {
   }
 
   tags = merge(
-    map("Name", "${var.name}-${var.environment}")
+    tomap({ "Name" = "${var.name}" })
   )
 }
 

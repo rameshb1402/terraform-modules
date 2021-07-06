@@ -7,18 +7,19 @@ variable "instance_type" {
 variable "tags" {
   description = "The name of the tags"
 }
-
 variable "user_data" {
   description = "The name of the user_data"
 }
 variable "subnet_id" {
   description = "The name of the subnet_id"
+  type = list(string)
 }
 variable "vpc_security_group_ids" {
   description = "The name of the vpc_security_group_ids"
 }
 variable "kms_key_id" {
-  default = "kms key id"
+  description = "kms key id"
+  default = ""
 }
 variable "name" {
   description = "name of the instance"
@@ -31,5 +32,5 @@ variable "iam_instance_profile" {
 }
 variable "key_name" {
   description = "SSH Key Name"
-  default = "null"
+  default = ""
 }
