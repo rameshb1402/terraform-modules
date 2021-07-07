@@ -1,4 +1,4 @@
-How to use this module
+## How to use this module
 
 ```
 module "kms" {
@@ -7,11 +7,11 @@ module "kms" {
   environment = var.environment
   kms_policy  = "kms-ebs-policy"
   region      = var.region
-  key_alias   = "${var.name}-${var.environment}"
+  key_alias   = "my-kms-key"
 }
 ```
-templates folder should contain a policy with existing policies and user.
-templates/kms-ebs-policy.json.tpl
+## templates folder should contain a policy with existing policies and user.
+### templates/kms-ebs-policy.json.tpl
 ```
 {
   "Version": "2012-10-17",
