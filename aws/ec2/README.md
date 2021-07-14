@@ -4,11 +4,11 @@ module "ec2" {
   source                 = "github.com/cloudveto/terraform-modules/aws/ec2"
   ami                    = "ami-123456"
   environment            = var.environment
+  application            = var.application
   iam_instance_profile   = "devops_role"
   instance_type          = "t3.small"
   name                   = "my-ec2-instance"
   subnet_id              = [module.vpc_id.subnet_pri_az1_id,module.vpc_id.subnet_pri_az2_id]
-  tags                   = var.tags
   user_data              = "user_data.sh"
   vpc_security_group_ids = [module.sg.sg_id]
   key_name               = "mykey"

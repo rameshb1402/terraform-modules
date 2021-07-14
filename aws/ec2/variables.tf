@@ -4,8 +4,8 @@ variable "ami" {
 variable "instance_type" {
   description = "The name of the instance_type"
 }
-variable "tags" {
-  description = "The name of the tags"
+variable "application" {
+  description = "The name of the application that ec2 is hosting. Eg: apache, tomcat, nginx, nodejs, java, vpn, mysql etc "
 }
 variable "user_data" {
   description = "The name of the user_data"

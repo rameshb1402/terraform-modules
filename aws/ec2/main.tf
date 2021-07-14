@@ -19,7 +19,7 @@ resource "aws_instance" "ec2" {
   }
 
   tags = merge(
-    tomap({ "Name" = "${var.name}" })
+    tomap({ "Name" = var.name, "Environment" = var.environment, "Application" = var. application})
   )
 }
 
