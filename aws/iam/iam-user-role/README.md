@@ -14,7 +14,7 @@ module "devops_readonly_attach_policy" {
 }
 ```
 
-Sample template(assumned_role_policy_template) file. File to be placed in "templates/" folder.
+Sample template(assume_role) file. File to be placed in "templates/" folder.
 ```
 {
   "Version": "2012-10-17",
@@ -30,7 +30,7 @@ Sample template(assumned_role_policy_template) file. File to be placed in "templ
 }
 ```
 
-Sample template(policy_template_file) file. File to be placed in "templates/" folder.
+Sample template(devops_engineer_custom_policy) file. File to be placed in "templates/" folder.
 ```
 {
    "Version":"2012-10-17",
