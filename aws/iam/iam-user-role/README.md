@@ -12,6 +12,7 @@ module "devops_readonly_attach_policy" {
   policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
   role       = module.devops.role_name
 }
+```
 
 Sample template(assumned_role_policy_template) file. File to be placed in "templates/" folder.
 ```
@@ -28,7 +29,7 @@ Sample template(assumned_role_policy_template) file. File to be placed in "templ
   ]
 }
 ```
-```
+
 Sample template(policy_template_file) file. File to be placed in "templates/" folder.
 ```
 {
