@@ -1,7 +1,7 @@
 # To create IAM User Role Policy
 ```
 module "devops" {
-  source                        = "github.com/cloudveto/terraform-modules/aws/iam/iam-user-roler"
+  source                        = "github.com/cloudveto/terraform-modules/aws/iam/iam-user-role"
   account_id                    = "123456789"
   assumned_role_policy_template = "assume_role"
   name                          = "cloudveto_iam_role_devops_engineer"
