@@ -12,8 +12,24 @@ module "devops_readonly_attach_policy" {
   policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
   role       = module.devops.role_name
 }
+
+Sample template(assumned_role_policy_template) file. File to be placed in "templates/" folder.
 ```
-Sample template file. File to be placed in "templates/" folder.
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+```
+```
+Sample template(policy_template_file) file. File to be placed in "templates/" folder.
 ```
 {
    "Version":"2012-10-17",
