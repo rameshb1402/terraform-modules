@@ -9,7 +9,7 @@ module "kaleon" {
   account_id           = "123456789"
 }
 ```
-Sample policy template file. 
+Sample policy template file(cloudveto_iam_role_devops_engineer_policy.json.tpl). 
 Template file to be placed in "templates/" folder.
 ```
 {
